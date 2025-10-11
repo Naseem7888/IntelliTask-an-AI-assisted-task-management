@@ -39,6 +39,8 @@ COPY ./deploy/php-fpm.conf /etc/php82/php-fpm.d/www.conf
 
 # Configure Supervisor to run both services
 COPY ./deploy/supervisord.conf /etc/supervisord.conf
+COPY ./deploy/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 WORKDIR /var/www/html
 
@@ -60,4 +62,4 @@ ENV APP_ENV=production \
     LOG_CHANNEL=stderr
 
 EXPOSE 8080
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["/usr/local/bin/entrypoint.sh"]

@@ -6,7 +6,6 @@ services:
     repo: https://github.com/Naseem7888/IntelliTask-an-AI-assisted-task-management
     rootDir: .
     dockerfilePath: Dockerfile
-    postDeployCommand: php artisan migrate --force && php artisan storage:link
     envVars:
       - key: APP_ENV
         value: production
