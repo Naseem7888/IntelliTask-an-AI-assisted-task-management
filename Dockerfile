@@ -53,7 +53,7 @@ COPY --from=assets /app/public/build /var/www/html/public/build
 
 # Permissions
 RUN adduser -D -H -u 1000 appuser \
-    && chown -R appuser:appuser /var/www/html/storage /var/www/html/bootstrap/cache
+    && chown -R nginx:nginx /var/www/html/storage /var/www/html/bootstrap/cache
 
 ENV APP_ENV=production \
     APP_DEBUG=false \
