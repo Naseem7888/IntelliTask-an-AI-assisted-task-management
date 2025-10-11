@@ -46,6 +46,8 @@ WORKDIR /var/www/html
 
 # Copy app code
 COPY . /var/www/html
+RUN find /var/www/html -type f -name "*.sh" -exec sed -i 's/\r$//' {} + && \
+    chmod +x /usr/local/bin/entrypoint.sh
 
 # Copy vendor from php-deps
 COPY --from=php-deps /app/vendor /var/www/html/vendor
