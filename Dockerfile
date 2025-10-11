@@ -27,7 +27,7 @@ FROM nginx:1.27-alpine AS runtime
 
 # Install PHP-FPM via separate container and copy from php-deps stage
 # We'll run PHP-FPM in a sidecar-like fashion using s6 overlay is overkill; instead use supervisord
-RUN apk add --no-cache php82 php82-fpm php82-opcache php82-ctype php82-mbstring php82-pdo php82-pdo_pgsql php82-gd php82-zip php82-intl php82-session php82-tokenizer php82-dom php82-fileinfo php82-openssl php82-simplexml php82-xml php82-xmlwriter php82-curl supervisor
+RUN apk add --no-cache php82 php82-fpm php82-opcache php82-ctype php82-mbstring php82-pdo php82-pdo_pgsql php82-sqlite3 php82-gd php82-zip php82-intl php82-session php82-tokenizer php82-dom php82-fileinfo php82-openssl php82-simplexml php82-xml php82-xmlwriter php82-curl supervisor
 # Make php CLI available as `php` for convenience
 RUN ln -s /usr/bin/php82 /usr/bin/php || true
 
