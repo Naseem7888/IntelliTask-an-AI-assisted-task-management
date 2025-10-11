@@ -8,7 +8,6 @@ storage/logs
 .github
 .gitignore
 Dockerfile
-deploy
 public/hot
 public/build
 .env
