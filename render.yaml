@@ -6,6 +6,7 @@ services:
     repo: https://github.com/Naseem7888/IntelliTask-an-AI-assisted-task-management
     rootDir: .
     dockerfilePath: Dockerfile
+    postDeployCommand: php artisan migrate --force && php artisan storage:link
     envVars:
       - key: APP_ENV
         value: production
@@ -15,6 +16,10 @@ services:
         generateValue: true
       - key: LOG_CHANNEL
         value: stderr
+      - key: APP_URL
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
       # Configure DB connection (use Render PostgreSQL and set DATABASE_URL or individual vars)
       # - key: DB_CONNECTION
       #   value: pgsql
