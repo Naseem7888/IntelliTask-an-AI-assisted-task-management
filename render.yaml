@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: intellitask
+    env: docker
+    plan: free
+    repo: https://github.com/your-username/IntelliTask
+    rootDir: .
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: LOG_CHANNEL
+        value: stderr
+      # Configure DB connection (use Render PostgreSQL and set DATABASE_URL or individual vars)
+      # - key: DB_CONNECTION
+      #   value: pgsql
+      # - key: DB_HOST
+      #   fromDatabase: your-postgres
+      # - key: DB_PORT
+      #   value: 5432
+      # - key: DB_DATABASE
+      #   fromDatabase: your-postgres
+      # - key: DB_USERNAME
+      #   fromDatabase: your-postgres
+      # - key: DB_PASSWORD
+      #   fromDatabase: your-postgres
+    autoDeploy: true
+    healthCheckPath: /

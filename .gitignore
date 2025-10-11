@@ -1,0 +1,42 @@
+# Laravel & PHP
+/vendor/
+/node_modules/
+/public/build/
+/public/hot
+/.phpunit.result.cache
+/.phpunit.cache
+composer.phar
+.php-cs-fixer.cache
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Storage (keep app/public tracked via symlink)
+/storage/*.key
+/storage/app/*.log
+/storage/debugbar/
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/framework/testing/*
+/storage/logs/*
+
+# IDEs & Editors
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Misc
+/public/storage

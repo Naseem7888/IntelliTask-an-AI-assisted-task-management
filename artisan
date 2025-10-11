@@ -1,0 +1,53 @@
+<?php
+
+define('LARAVEL_START', microtime(true));
+ 
+// Load Composer's autoloader
+require __DIR__.'/vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Create The Application
+|--------------------------------------------------------------------------
+|
+| The first thing we will do, is create a new Laravel application instance
+| which serves as the "glue" for all the components of Laravel, and is
+| the IoC container for the system binding all of the various parts.
+|
+*/
+ 
+$app = require_once __DIR__.'/bootstrap/app.php';
+ 
+/*
+|--------------------------------------------------------------------------
+| Run The Console Application
+|--------------------------------------------------------------------------
+|
+| This script returns the exit status of the command back to the calling
+| terminal allowing us to chain commands together. The Application class
+| just bootstraps the framework and gets it ready for use, then it
+| will load up this command so that we can run it and send output.
+|
+*/
+ 
+$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+ 
+$status = $kernel->handle(
+    $input = new Symfony\Component\Console\Input\ArgvInput,
+    new Symfony\Component\Console\Output\ConsoleOutput
+);
+ 
+/*
+|--------------------------------------------------------------------------
+| Terminate The Application
+|--------------------------------------------------------------------------
+|
+| Once the command has finished running, we will fire off the shutdown
+| events so that any final work may be done by the application before
+| we end the process. This is the last thing done by the script.
+|
+*/
+ 
+$kernel->terminate($input, $status);
+ 
+exit($status);

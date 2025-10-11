@@ -1,0 +1,24 @@
+@layer utilities {
+    /* Spacing */
+    .p-responsive {
+        @apply px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Typography */
+    .text-h1 {
+        @apply text-3xl sm:text-4xl font-bold tracking-tight;
+    }
+    .text-h2 {
+        @apply text-2xl sm:text-3xl font-bold;
+    }
+
+    /* Layout */
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+
+    /* Accessibility */
+    .sr-only {
+        @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    }
+}

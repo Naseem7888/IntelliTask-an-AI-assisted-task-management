@@ -1,0 +1,55 @@
+@layer utilities {
+    /* Spacing */
+    .p-safe {
+        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    }
+
+    /* Typography */
+    .text-balance {
+        text-wrap: balance;
+    }
+
+    /* Accessibility */
+    .sr-only {
+        @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+    }
+
+    /* Gradient text utility */
+    .gradient-text {
+        background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-500));
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+    }
+
+    /* Button group utility */
+    .btn-group {
+        display: inline-flex;
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+    .btn-group > .btn {
+        border-radius: 0;
+    }
+    .btn-group > .btn:not(:first-child) {
+        margin-left: -1px; /* collapse borders */
+    }
+    .btn-group > .btn:first-child {
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+    .btn-group > .btn:last-child {
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+    }
+
+    /* Simple fade-in utility */
+    .fade-in {
+        animation: fadeIn 500ms ease both;
+    }
+
+    /* Input label and error helpers (for non-component contexts) */
+    .input-label { @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1; }
+    .input-error { @apply mt-1 text-sm text-red-600 dark:text-red-400; }
+}

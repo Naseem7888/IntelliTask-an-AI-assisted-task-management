@@ -1,0 +1,14 @@
+node_modules
+vendor
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+storage/logs
+.git
+.github
+.gitignore
+Dockerfile
+deploy
+public/hot
+public/build
+.env
