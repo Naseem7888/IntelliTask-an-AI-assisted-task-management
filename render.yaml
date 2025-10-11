@@ -3,7 +3,7 @@ services:
     name: intellitask
     env: docker
     plan: free
-    repo: https://github.com/your-username/IntelliTask
+  repo: https://github.com/Naseem7888/IntelliTask-an-AI-assisted-task-management
     rootDir: .
     dockerfilePath: Dockerfile
     envVars:
