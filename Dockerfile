@@ -63,5 +63,5 @@ ENV APP_ENV=production \
     APP_DEBUG=false \
     LOG_CHANNEL=stderr
 
-EXPOSE 8080
+EXPOSE 10000
 CMD ["/usr/local/bin/entrypoint.sh"]
