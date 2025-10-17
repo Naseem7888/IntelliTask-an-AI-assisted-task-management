@@ -104,6 +104,11 @@ class TaskManager extends Component
         $this->reset('editingTaskId', 'editingTask');
     }
 
+    public function cancelCreateTask()
+    {
+        $this->reset('newTask', 'showCreateForm');
+    }
+
     public function deleteTask(int $taskId)
     {
         $task = Task::where('user_id', Auth::id())->findOrFail($taskId);
